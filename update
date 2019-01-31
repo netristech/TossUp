@@ -1,0 +1,19 @@
+#! /bin/bash
+
+#update repo from GitHub
+
+echo "Starting update. This may take a moment..."
+systemctl stop httpd
+ifdown enp0s17
+ifdown enp0s8
+tar -czvf /root/backup_$(date +"%Y%m%d").tgz -C /var/www html
+cd /var/www/html
+ifup enp0s8
+#git pull origin master
+git fetch --all
+git reset --hard origin/master
+chown -R apache:apache /var/www/html
+cd /root
+ifup enp0s17
+systemctl start httpd
+echo "Update process complete."
