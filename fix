@@ -1,0 +1,9 @@
+#! /bin/bash
+# Reset network interfaces
+
+ifdown enp0s17
+ifdown enp0s8
+ifup enp0s17
+ifup enp0s8
+ip addr show | grep "enp0s17"
+ip addr show | grep "enp0s8"
