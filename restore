@@ -1,0 +1,13 @@
+#! /bin/bash
+# Restore TossUp from backup file
+
+echo "Restoring from backup"
+echo ""
+ls -lah /root/backup_*
+echo "Select backup to restore (type date only in YYYYmmdd format: "
+read backupvar
+cd /var/www
+tar -xzvf backup_$backupvar.tgz
+chown -R apache:apache /var/www/html
+cd /root
+echo "Restore Operation Complete!"
