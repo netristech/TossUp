@@ -1,0 +1,12 @@
+#!/bin/bash
+# Startup Script for TossUp VMs
+
+ifdown enp0s17
+ifdown enp0s8
+cd /root
+tar -czvf /root/scripts_backup.tgz -C /root install update fix restore startup
+ifup enp0s8
+git fetch --all
+git reset --hard origin/master
+chmod 555 install update fix restore startup
+ifup enp0s17
