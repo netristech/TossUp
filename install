@@ -1,0 +1,17 @@
+#! /bin/bash
+# Perform a clean install of TossUp 
+# !!! Will delete any customizations
+
+echo "Starting install of TossUp from gitHub. This may take a moment..."
+systemctl stop httpd
+ifdown enp0s17
+ifdown enp0s8
+tar -czvf /root/backup_$(date +"%Y%m%d").tgz -C /var/www html
+rm -rf /var/www/html
+ifup enp0s8
+git clone https://github.com/michaelballen/tossup.git /var/www/html/
+ln -s /var/www/html /var/www/html/tossup2
+chown -R apache:apache /var/www/html
+systemctl start httpd
+ifup enp0s17
+echo "Install process complete."
