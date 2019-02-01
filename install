@@ -1,6 +1,6 @@
-#! /bin/bash
+#!/bin/bash
 # Perform a clean install of TossUp 
-# !!! Will delete any customizations
+# !!! This will delete any customizations !!!
 
 echo "Starting install of TossUp from gitHub. This may take a moment..."
 systemctl stop httpd
@@ -10,6 +10,6 @@ rm -rf /var/www/html
 git clone https://github.com/michaelballen/tossup.git /var/www/html/
 ln -s /var/www/html /var/www/html/tossup2
 chown -R apache:apache /var/www/html
-systemctl start httpd
 ifup enp0s3
+systemctl start httpd
 echo "Install process complete."
