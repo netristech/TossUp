@@ -11,6 +11,6 @@ git fetch --all
 git reset --hard origin/master
 chown -R apache:apache /var/www/html
 cd /root
-systemctl start httpd
 ifup enp0s3
+systemctl start httpd
 echo "Update process complete."
