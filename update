@@ -8,7 +8,7 @@ echo "|----------------------------------------------|"
 echo " "
 systemctl stop httpd
 ifdown enp0s3
-tar -czvf /root/backup_$(date +"%Y%m%d").tgz -C /var/www html
+tar -czf /root/backup_$(date +"%Y%m%d").tgz -C /var/www html
 cd /var/www/html
 #git pull origin master
 git fetch --all
