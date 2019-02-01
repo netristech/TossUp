@@ -1,6 +1,11 @@
 #!/bin/bash
 # Restore TossUp from backup file
 
+
+echo "|----------------------------------------------|"
+echo "| Restoring TossUp app from backup             |"
+echo "|----------------------------------------------|"
+echo " "
 echo "Restoring TossUp from backup"
 echo ""
 ls -lah /root/backup_*
@@ -10,4 +15,6 @@ cd /var/www
 tar -xzvf backup_$backupvar.tgz
 chown -R apache:apache /var/www/html
 cd /root
+echo " "
 echo "Restore Operation Complete!"
+echo " "
