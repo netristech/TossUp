@@ -1,7 +1,11 @@
 #!/bin/bash
 #update TossUp app from GitHub
 
-echo "Starting update. This may take a moment..."
+echo "|----------------------------------------------|"
+echo "| Starting update of TossUp app. This may take |"
+echo "| a few minutes. Please be patient...          |"
+echo "|----------------------------------------------|"
+echo " "
 systemctl stop httpd
 ifdown enp0s3
 tar -czvf /root/backup_$(date +"%Y%m%d").tgz -C /var/www html
@@ -13,4 +17,6 @@ chown -R apache:apache /var/www/html
 cd /root
 ifup enp0s3
 systemctl start httpd
-echo "Update process complete."
+echo " "
+echo "Update process complete!"
+echo " "
