@@ -2,10 +2,11 @@
  
 ## Fix
 > Use `./fix` to execute script
+
 This script can be run to reset the network stack on the VMs and resolve network / Internet connectivity issues.
 
 ## Install
-? Use `./install` to execute script
+> Use `./install` to execute script 
 This script performs a <b>clean</b> installation of TossUp from GitHub Repo. A backup of any existing installation is automatically created during this process. <b>WARNING:</b> Running this script will remove any customizations, uploads, etc.
 
 ## Restore
