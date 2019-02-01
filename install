@@ -2,7 +2,12 @@
 # Perform a clean install of TossUp 
 # !!! This will delete any customizations !!!
 
-echo "Starting install of TossUp from gitHub. This may take a moment..."
+
+echo "|----------------------------------------------|"
+echo "| Starting install of TossUp from GitHub. This |"
+echo "| may take a few minutes. Please be patient... |"
+echo "|----------------------------------------------|"
+echo " "
 systemctl stop httpd
 ifdown enp0s3
 tar -czvf /root/backup_$(date +"%Y%m%d").tgz -C /var/www html
@@ -12,4 +17,6 @@ ln -s /var/www/html /var/www/html/tossup2
 chown -R apache:apache /var/www/html
 ifup enp0s3
 systemctl start httpd
-echo "Install process complete."
+echo " "
+echo "Install process complete!"
+echo " "
