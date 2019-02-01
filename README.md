@@ -23,4 +23,4 @@ This script automatically runs when the VMs boot up and updates itself and all o
 ## Update
 > Use `./update` to execute script
 
-This script can be run to update the TossUp apps on the VMs to the latest version available on Github. Like the install script, a backup of the existing installation is automatically generated.
+This script can be run to update the TossUp app on the VMs to the latest version available on Github. Like the install script, a backup of the existing installation is automatically generated.
