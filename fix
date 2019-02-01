@@ -1,9 +1,10 @@
 #!/bin/bash
 # Reset network interfaces
 
+/etc/init.d/network restart
+
 ifdown enp0s3
 ifdown enp0s8
-/etc/init.d/network restart
 ifup enp0s3
 ifup enp0s8
 ip addr show | grep "enp0s17"
