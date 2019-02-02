@@ -10,7 +10,7 @@ echo "|----------------------------------------------|"
 echo " "
 systemctl stop httpd
 ifdown enp0s3
-tar -czf /root/backup_$(date +"%Y%m%d").tgz -C /var/www html
+tar -czf /root/backup/backup_$(date +"%Y%m%d").tgz -C /var/www html
 rm -rf /var/www/html
 git clone https://github.com/michaelballen/tossup.git /var/www/html/
 ln -s /var/www/html /var/www/html/tossup2
