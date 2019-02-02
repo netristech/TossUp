@@ -8,8 +8,8 @@ echo "|----------------------------------------------|"
 echo " "
 ls -lah /root/backup/backup_*
 read -p "Select backup to restore (type date only in YYYYmmdd format or type quit to exit): " backupvar
-if ($backvar == 'quit')
-  exit
+if [ $backvar -eq "quit" ]
+  then exit
 fi
 cd /var/www
 tar -xzf /root/backup/backup_${backupvar}.tgz
