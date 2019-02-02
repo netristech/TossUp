@@ -7,7 +7,10 @@ echo "| Restore TossUp app from backup               |"
 echo "|----------------------------------------------|"
 echo " "
 ls -lah /root/backup/backup_*
-read -p "Select backup to restore (type date only in YYYYmmdd format: " backupvar
+read -p "Select backup to restore (type date only in YYYYmmdd format or type quit to exit): " backupvar
+if ($backvar == 'quit')
+  exit
+fi
 cd /var/www
 tar -xzf /root/backup/backup_${backupvar}.tgz
 chown -R apache:apache /var/www/html
