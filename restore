@@ -6,13 +6,10 @@ echo "|----------------------------------------------|"
 echo "| Restoring TossUp app from backup             |"
 echo "|----------------------------------------------|"
 echo " "
-echo "Restoring TossUp from backup"
-echo ""
 ls -lah /root/backup_*
-echo "Select backup to restore (type date only in YYYYmmdd format: "
-read backupvar
+read -p "Select backup to restore (type date only in YYYYmmdd format: " backupvar
 cd /var/www
-tar -xzvf backup_$backupvar.tgz
+tar -xzvf /root/backup_${backupvar}.tgz
 chown -R apache:apache /var/www/html
 cd /root
 echo " "
