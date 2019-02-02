@@ -3,7 +3,7 @@
 
 
 echo "|----------------------------------------------|"
-echo "| Restore TossUp app from backup             |"
+echo "| Restore TossUp app from backup               |"
 echo "|----------------------------------------------|"
 echo " "
 ls -lah /root/backup/backup_*
