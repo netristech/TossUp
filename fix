@@ -2,7 +2,7 @@
 # Reset network interfaces
 
 echo "|----------------------------------------------|"
-echo "| Restarting network services... This may take |"
+echo "| Restarting services... This may take |"
 echo "| a few minutes. Please be patient...          |"
 echo "|----------------------------------------------|"
 echo " "
@@ -11,6 +11,8 @@ ifdown enp0s3
 ifdown enp0s8
 ifup enp0s3
 ifup enp0s8
+systemctl stop httpd
+systemctl start httpd
 ip addr show | grep "enp0s3"
 ip addr show | grep "enp0s8"
 echo " "
