@@ -6,6 +6,8 @@ echo "| Restarting services... This may take |"
 echo "| a few minutes. Please be patient...          |"
 echo "|----------------------------------------------|"
 echo " "
+sed -i 's/upload_max_filesize = 2/upload_max_filesize = 200/g' /etc/php.ini
+sed -i 's/post_max_size = 8/post_max_size = 200/g' /etc/php.ini
 /etc/init.d/network restart
 ifdown enp0s3
 ifdown enp0s8
