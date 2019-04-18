@@ -8,5 +8,3 @@ git fetch --all
 git reset --hard origin/master
 chmod 555 install update fix restore startup
 ifup enp0s3
-sed -i 's/upload_max_fileszie = 2/upload_max_filesize = 200/g' /etc/php.ini
-sed -i 's/post_max_size = 8/post_max_size = 200/g' /etc/php.ini
