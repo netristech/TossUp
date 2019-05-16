@@ -1,0 +1,24 @@
+html,
+body {
+        min-height: 100vh;
+        padding: 40px 5%;
+        background-color: #f8f8f8;
+        color: #303132;
+}
+
+body * {
+        margin-bottom: 30px;
+}
+
+#output {
+        width: 100%;
+        min-height: 40vh;
+        padding: 16px;
+        background-color: #303132;
+        color: #c0ffc0;
+}
+
+button {
+        padding: 10px 20px;
+        background-color: #ccc;
+}
