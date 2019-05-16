@@ -1,9 +1,9 @@
 #!/bin/bash
 service=httpd
 
-if [ $(ps -ef | grep -v grep | grep $service | wc -l) > 0 ]
+if [ $(systemctl status $service | grep 'Active:' | awk '{print $2}') == 'active' ]
 then
-  return
+  exit
 else
-  /etc/init.d/$service start
+  systemctl start $service
 fi
