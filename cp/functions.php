@@ -31,7 +31,7 @@ function testFunc() {
 
 function initFunc() {
         $output = shell_exec("./init.sh");
-        echo "<pre>" . $output . "</pre>"
+        echo "<pre>" . $output . "</pre>";
 }
 
 function updateCode() {
