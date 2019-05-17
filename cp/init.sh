@@ -1,3 +1,4 @@
 #!/bin/bash
 
-systemctl status httpd
+cat /etc/motd
+systemctl status httpd | awk 'NR==1,NR==3'
