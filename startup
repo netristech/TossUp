@@ -3,8 +3,8 @@
 
 ifdown enp0s3
 cd /root
-tar -czf /root/backup/scripts_backup.tgz -C /root install update fix restore startup
+tar -czf /root/backup/scripts_backup.tgz -C /root install update fix restore startup servicecheck cp
 git fetch --all
 git reset --hard origin/master
-chmod 555 install update fix restore startup
+chmod 555 install update fix restore startup service check
 ifup enp0s3
