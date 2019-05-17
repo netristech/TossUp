@@ -1,4 +1,12 @@
 $(document).ready(function() {
+        $.ajax({
+                url: 'functions.php',
+                type: 'post',
+                data: 'action=init',
+                success: function(result) {
+                        $('#output').html(result);
+                }
+        });
         $('#test').click(function(e) {
                 e.preventDefault();
                 $.ajax({
