@@ -6,6 +6,9 @@ if(isset($_POST['action']) && !empty($_POST['action'])) {
                 case 'test':
                         testFunc();
                         break;
+                case 'init':
+                        initFunc();
+                        break;                        
                 case 'shutdown':
                         shutdownVM();
                         break;
@@ -24,6 +27,11 @@ if(isset($_POST['action']) && !empty($_POST['action'])) {
 function testFunc() {
         $output = shell_exec("./test.sh");
         echo "<pre>" . $output . "</pre>";
+}
+
+function initFunc() {
+        $output = shell_exec("./init.sh");
+        echo "<pre>" . $output . "</pre>"
 }
 
 function updateCode() {
