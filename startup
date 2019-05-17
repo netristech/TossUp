@@ -6,7 +6,7 @@ cd /root
 tar -czf /root/backup/scripts_backup.tgz -C /root install update fix restore startup servicecheck cp
 git fetch --all
 git reset --hard origin/master
-chmod 550 install update fix restore startup service check
+chmod 550 install update fix restore startup servicecheck
 cp -r /root/cp /var/www/html/
 chown -R apache:apache /var/www/html/cp
 chmod 550 /var/www/html/cp/*.sh
