@@ -100,7 +100,7 @@ $(document).ready(function() {
                         type: 'post',
                         data: 'action=restore,restdate=date',
                         success: function(result) {
-                                $('#output').html(result);
+                                $('#output').html($('#output').html() + result);
                         }
                 });                
         });        
