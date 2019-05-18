@@ -10,7 +10,7 @@ body * {
         margin-bottom: 30px;
 }
 
-top {
+#top {
         height: calc(30vh - 30px);
 }
 
