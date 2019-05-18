@@ -1,11 +1,8 @@
 #!/bin/bash
 
-read -p "Select backup to restore (type date only in YYYYmmdd format or type quit to exit): " backupvar
-if [ $backupvar == 'quit' ]; then
-  exit 1
-fi
+date=$1
 cd /var/www
-tar -xzf /root/backup/backup_${backupvar}.tgz
+tar -xzf /root/backup/backup_${date}.tgz
 chown -R apache:apache /var/www/html
 cd /root
 echo " "
