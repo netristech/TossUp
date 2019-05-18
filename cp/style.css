@@ -10,15 +10,19 @@ body * {
         margin-bottom: 30px;
 }
 
+top {
+        height: calc(30vh - 30px);
+}
+
+button {
+        padding: 10px 20px;
+        background-color: #ccc;
+}
+
 #output {
         width: 100%;
         height: calc(70vh - 30px);
         padding: 16px;
         background-color: #303132;
         color: #c0ffc0;
-}
-
-button {
-        padding: 10px 20px;
-        background-color: #ccc;
 }
