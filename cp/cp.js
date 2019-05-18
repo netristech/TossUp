@@ -23,13 +23,13 @@ $(document).ready(function() {
                 if (!confirm('This will restart the TossUp application')) {
                         return;
                 } else {
-                        $(this).html("Restarting...");
+                        $('#output').html('<pre>Restarting the TossUp system now. Please wait, this will take a moment. . .</pre>');
                         $.ajax({
                                 url: 'functions.php',
                                 type: 'post',
                                 data: 'action=restart',
                                 success: function(result) {
-                                        $('#output').html(result);
+                                        $('#output').html($('#output').html() + result);
                                 }
                         });
                 }
@@ -39,13 +39,13 @@ $(document).ready(function() {
                 if (!confirm('This will completely shutdown the TossUp application')) {
                         return;
                 } else {
-                        $(this).html("Shutting Down...");
+                        $('#output').html('<pre>Shutting down the TossUp System now. Please wait, this will take a moment. . .</pre>');
                         $.ajax({
                                 url: 'functions.php',
                                 type: 'post',
                                 data: 'action=shutdown',
                                 success: function(result) {
-                                        $('#output').html(result);
+                                        $('#output').html($('#output').html() + result);
                                 }
                         });
                 }
@@ -62,6 +62,17 @@ $(document).ready(function() {
                         }
                 });
         });
+        $('#fix').click(function(e) {
+                e.preventDefault();
+                $.ajax({
+                        url: 'functions.php',
+                        type: 'post',
+                        data: 'action=fix',
+                        success: function(result) {
+                                $('#output').html(result);
+                        }
+                });
+        });
         $('#update').click(function(e) {
                 e.preventDefault();
                 $.ajax({
@@ -73,4 +84,15 @@ $(document).ready(function() {
                         }
                 });
         });
+        $('#restore').click(function(e) {
+                e.preventDefault();
+                $.ajax({
+                        url: 'functions.php',
+                        type: 'post',
+                        data: 'action=restore',
+                        success: function(result) {
+                                $('#output').html(result);
+                        }
+                });
+        });        
 });
