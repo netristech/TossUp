@@ -12,7 +12,7 @@ body * {
 
 #output {
         width: 100%;
-        min-height: 40vh;
+        height: 100%;
         padding: 16px;
         background-color: #303132;
         color: #c0ffc0;
