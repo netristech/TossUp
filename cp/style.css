@@ -7,14 +7,13 @@ body {
 }
 
 body {
-        min-height: 100vh;
         padding: 30px 5%;
         background-color: #f8f8f8;
         color: #303132;
 }
 
 #top {
-        height: calc(30vh - 30px);
+        height: calc(20vh - 30px);
 }
 
 button {
@@ -23,8 +22,9 @@ button {
 }
 
 #output {
+        box-sizing: border-box;
         width: 100%;
-        height: calc(70vh - 30px);
+        height: calc(80vh - 30px);
         padding: 16px;
         background-color: #303132;
         color: #c0ffc0;
