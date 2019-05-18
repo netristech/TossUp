@@ -9,7 +9,7 @@
         <script src="cp.js" type="text/javascript"></script>
 </head>
 <body>
-        <span id="top">
+        <div id="top">
                 <button id="test" hidden>Test</button>
                 <button id="restart">Restart VM</button>
                 <button id="shutdown">Shutdown VM</button>
@@ -17,7 +17,7 @@
                 <button id="fix">Auto Fix</button>
                 <button id="update">Update Code</button>
                 <button id="restore">Restore From Backup</button>
-        </span>
+        </div>
         <div id="output"></div>
 </body>
 </html>
