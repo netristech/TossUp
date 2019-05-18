@@ -89,10 +89,19 @@ $(document).ready(function() {
                 $.ajax({
                         url: 'functions.php',
                         type: 'post',
-                        data: 'action=restore',
+                        data: 'action=list-backups',
                         success: function(result) {
                                 $('#output').html(result);
                         }
                 });
+                var date = prompt('Enter the backup file date in YYYYmmdd format:');
+                $.ajax({
+                        url: 'functions.php',
+                        type: 'post',
+                        data: 'action=restore,restdate=date',
+                        success: function(result) {
+                                $('#output').html(result);
+                        }
+                });                
         });        
 });
