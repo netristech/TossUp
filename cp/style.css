@@ -1,13 +1,15 @@
-html,
+html {
+        padding: 0px;
+        margin: 0px;
+        border: none;
+        outline: none;
+}
+
 body {
         min-height: 100vh;
         padding: 30px 5%;
         background-color: #f8f8f8;
         color: #303132;
-}
-
-body * {
-        margin-bottom: 30px;
 }
 
 #top {
