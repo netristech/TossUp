@@ -83,5 +83,16 @@ $(document).ready(function() {
                                 $('#output').html(result);
                         }
                 });
-        });      
+        });
+        $('#list').click(function(e) {
+                e.preventDefault();
+                $.ajax({
+                        url: 'functions.php',
+                        type: 'post',
+                        data: 'action=list-backups',
+                        success: function(result) {
+                                $('#output').html(result);
+                        }
+                });
+        });        
 });
