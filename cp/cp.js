@@ -101,7 +101,7 @@ $(document).ready(function() {
                 $.ajax({
                         url: 'functions.php',
                         type: 'post',
-                        data: 'action=restore restdate=date',
+                        data: 'action=restore,restdate=date',
                         success: function(result) {
                                 $('#output').html($('#output').html() + result);
                         }
