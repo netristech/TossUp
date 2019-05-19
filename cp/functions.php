@@ -79,7 +79,7 @@ function restoreBackup() {
                 $output = shell_exec("sudo ./restore.sh $date");
                 echo "<pre>" . $output . "</pre>";
         }*/
-        echo "<pre>" . $_POST['restdate'] . "</pre>";
+        echo "<pre>Test " . $_POST['restdate'] . "</pre>";
 }
 
 ?>
