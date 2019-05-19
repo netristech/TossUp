@@ -94,7 +94,7 @@ $(document).ready(function() {
                                 $('#output').html(result);
                         }
                 });
-        }
+        });
         $('#restore').click(function(e) {
                 e.preventDefault();
                 var date = prompt('Enter the backup file date in YYYYmmdd format:');
