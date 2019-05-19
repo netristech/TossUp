@@ -16,6 +16,7 @@
                 <button id="disable-wifi">Disable WiFi</button>
                 <button id="fix">Auto Fix</button>
                 <button id="update">Update Code</button>
+                <button id="list">List Backups</button>
                 <button id="restore">Restore From Backup</button>
         </div>
         <div id="output"></div>
