@@ -84,7 +84,7 @@ $(document).ready(function() {
                         }
                 });
         });
-        $('#restore').click(function(e) {
+        $('#list').click(function(e) {
                 e.preventDefault();
                 $.ajax({
                         url: 'functions.php',
@@ -94,6 +94,9 @@ $(document).ready(function() {
                                 $('#output').html(result);
                         }
                 });
+        }
+        $('#restore').click(function(e) {
+                e.preventDefault();
                 var date = prompt('Enter the backup file date in YYYYmmdd format:');
                 $.ajax({
                         url: 'functions.php',
