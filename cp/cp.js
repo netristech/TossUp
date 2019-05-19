@@ -98,6 +98,7 @@ $(document).ready(function() {
         $('#restore').click(function(e) {
                 e.preventDefault();
                 var date = prompt('Enter the backup file date in YYYYmmdd format:');
+                $('#output').html($('#output').html() + '<pre>Stering restore operation. This will take a couple minutes. . .</pre>');
                 $.ajax({
                         url: 'functions.php',
                         type: 'post',
