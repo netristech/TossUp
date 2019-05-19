@@ -1,0 +1,2 @@
+@reboot sleep 15 && /root/startup
+* * * * * /root/servicecheck
