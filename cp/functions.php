@@ -74,11 +74,12 @@ function listBackups() {
 }
 
 function restoreBackup() {
-        if(isset($_POST['restdate']) && !empty($_POST['restdate'])) {
+        /*if(isset($_POST['restdate']) && !empty($_POST['restdate'])) {
                 $date = $_POST['restdate'];
                 $output = shell_exec("sudo ./restore.sh $date");
                 echo "<pre>" . $output . "</pre>";
-        }
+        }*/
+        echo "<pre>" . $_POST['restdate'] . "</pre>";
 }
 
 ?>
