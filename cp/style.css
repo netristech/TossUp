@@ -26,6 +26,7 @@ button {
         width: 100%;
         height: calc(80vh - 30px);
         padding: 16px;
-        background-color: #303132;
-        color: #c0ffc0;
+        background-color: #fff;
+        color: #303132;
+        border: 1px solid #ccc;
 }
