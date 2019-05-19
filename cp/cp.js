@@ -83,28 +83,5 @@ $(document).ready(function() {
                                 $('#output').html(result);
                         }
                 });
-        });
-        $('#list').click(function(e) {
-                e.preventDefault();
-                $.ajax({
-                        url: 'functions.php',
-                        type: 'post',
-                        data: 'action=list-backups',
-                        success: function(result) {
-                                $('#output').html(result);
-                        }
-                });
-        });
-        $('#restore').click(function(e) {
-                e.preventDefault();
-                var date = prompt('Enter the backup file date in YYYYmmdd format:');
-                $.ajax({
-                        url: 'functions.php',
-                        type: 'post',
-                        data: 'action=restore,restdate=date',
-                        success: function(result) {
-                                $('#output').html($('#output').html() + result);
-                        }
-                });                
-        });        
+        });      
 });
