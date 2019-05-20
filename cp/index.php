@@ -14,6 +14,7 @@
                 <button id="restart">Restart VM</button>
                 <button id="shutdown">Shutdown VM</button>
                 <button id="disable-wifi">Disable WiFi</button>
+                <button id="enable-wifi">Enable WiFi</button>
                 <button id="fix">Auto Fix</button>
                 <button id="update">Update Code</button>
                 <button id="list">List Backups</button>
