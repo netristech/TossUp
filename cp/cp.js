@@ -23,7 +23,7 @@ $(document).ready(function() {
                 if (!confirm('This will restart the TossUp application')) {
                         return;
                 } else {
-                        $('#output').html('<pre>Restarting the TossUp system now. Please wait, this will take a moment. . .</pre>');
+                        $('#output').html('<pre>Restarting the TossUp system now.</pre><pre> Please wait, this will take a moment. . .</pre>');
                         $.ajax({
                                 url: 'functions.php',
                                 type: 'post',
@@ -39,7 +39,7 @@ $(document).ready(function() {
                 if (!confirm('This will completely shutdown the TossUp application')) {
                         return;
                 } else {
-                        $('#output').html('<pre>Shutting down the TossUp System now. Please wait, this will take a moment. . .</pre>');
+                        $('#output').html('<pre>Shutting down the TossUp System now.</pre><pre>Please wait, this will take a moment. . .</pre>');
                         $.ajax({
                                 url: 'functions.php',
                                 type: 'post',
@@ -62,19 +62,33 @@ $(document).ready(function() {
                         }
                 });
         });
+        $('#enable-wifi').click(function(e) {
+                e.preventDefault();
+                $('#output').html('<pre>Starting the wireless interface. . .</pre>');
+                $.ajax({
+                        url: 'functions.php',
+                        type: 'post',
+                        data: 'action=enable-wifi',
+                        success: function(result) {
+                                $('#output').html($('#output').html() + '<pre>The interface has been enabled successfully.</pre>');
+                        }
+                });
+        });        
         $('#fix').click(function(e) {
                 e.preventDefault();
+                $('#output').html('<pre>Performing automatic diagnostics.</pre><pre>This will take a moment. . .</pre>');
                 $.ajax({
                         url: 'functions.php',
                         type: 'post',
                         data: 'action=fix',
                         success: function(result) {
-                                $('#output').html(result);
+                                $('#output').html($('#output').html() + result);
                         }
                 });
         });
         $('#update').click(function(e) {
                 e.preventDefault();
+                $('#output').html('<pre>Updating source code from Git Hub. Please wait. . .</pre>');
                 $.ajax({
                         url: 'functions.php',
                         type: 'post',
