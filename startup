@@ -12,5 +12,5 @@ chown -R apache:apache /var/www/html/cp
 chmod 550 /var/www/html/cp/*.sh
 cp /root/crontab /var/spool/cron/root
 chmod 500 /var/spool/cron/root
-sed -i -e '/^%wheel/{N;N;s/$/\n%wheel  ALL = NOPASSWD: /var/www/html/cp/*.sh/}' /etc/sudoers
+sed -i '/^%wheel/{N;N;s/$/\n%wheel  ALL = NOPASSWD: /var/www/html/cp/*.sh/}' /etc/sudoers
 ifup enp0s3
