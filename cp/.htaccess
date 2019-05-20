@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "Password Protected Area"
-AuthUserFile /root/.htpasswd
+AuthUserFile /var/www/html/cp/.htpasswd
 Require valid-user
