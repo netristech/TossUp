@@ -98,7 +98,7 @@ $(document).ready(function() {
         $('#restore').click(function(e) {
                 e.preventDefault();
                 var date = prompt('Enter the backup file date in YYYYmmdd format:');
-                if (date != null) {
+                if (date != null && date != '') {
                         $('#output').html($('#output').html() + '<pre>Starting restore operation. This will take a couple minutes. . .</pre>');
                         $.ajax({
                                 url: 'functions.php',
@@ -110,6 +110,7 @@ $(document).ready(function() {
                         });
                 }
                 else {
+                        $('#output').html($('#output').html() + 'Operation cancelled.');
                         return;
                 }
         });        
