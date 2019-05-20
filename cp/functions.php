@@ -18,6 +18,9 @@ if(isset($_POST['action']) && !empty($_POST['action'])) {
                 case 'disable-wifi':
                         disableWifi();
                         break;
+                case 'enable-wifi':
+                        enableWifi();
+                        break;                        
                 case 'fix':
                         autoFix();
                         break;
@@ -55,6 +58,11 @@ function shutdownVM() {
 
 function disableWifi() {
         $output = shell_exec("sudo ./disable-wifi.sh");
+        echo "<pre>" . $output . "</pre>";
+}
+
+function enableWifi() {
+        $output = shell_exec("sudo ./enable-wifi.sh");
         echo "<pre>" . $output . "</pre>";
 }
 
