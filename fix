@@ -11,7 +11,7 @@ sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 200M/g' /etc/php.ini
 sed -i 's/post_max_size = 8/post_max_size = 200/g' /etc/php.ini
 sed -i 's/max_execution_time = 30/max_execution_time = 120/g' /etc/php.ini
 sed -i 's/max_input_time = 60/max_input_time = 240/g' /etc/php.ini
-sed -ie '^%wheel  ALL=(ALL)/a %wheel  ALL = NOPASSWD: /var/www/html/cp/*.sh' /etc/sudoers
+awk '/%wheel  ALL=(ALL)/ { print; print "%wheel  ALL = NOPASSWD: /var/www/html/cp/*.sh"; next }1' /etc/sudoers
 /etc/init.d/network restart
 ifdown enp0s3
 ifdown enp0s8
