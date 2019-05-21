@@ -124,7 +124,7 @@ $(document).ready(function() {
                         });
                 }
                 else {
-                        $('#output').html($('#output').html() + 'Operation cancelled.');
+                        $('#output').html($('#output').html() + '<pre>Operation cancelled.</pre>');
                         return;
                 }
         });        
