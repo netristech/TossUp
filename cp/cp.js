@@ -88,15 +88,18 @@ $(document).ready(function() {
         });
         $('#update').click(function(e) {
                 e.preventDefault();
-                $('#output').html('<pre>Updating source code from Git Hub. Please wait. . .</pre>');
-                $.ajax({
-                        url: 'functions.php',
-                        type: 'post',
-                        data: 'action=update',
-                        success: function(result) {
-                                $('#output').html(result);
-                        }
-                });
+                if (!confirm('Make sure you have an Internet connection before proceeding!')) {
+                        return;
+                } else {
+                        $.ajax({
+                                url: 'functions.php',
+                                type: 'post',
+                                data: 'action=update',
+                                success: function(result) {
+                                        $('#output').html(result);
+                                }
+                        });
+                }
         });
         $('#list').click(function(e) {
                 e.preventDefault();
