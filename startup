@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"
 # Startup Script for TossUp VMs
 
 #Shutdown Ethener adapter during provisioning operations
