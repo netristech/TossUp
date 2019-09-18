@@ -10,5 +10,5 @@ git reset --hard origin/master
 chown -R apache:apache /var/www/html
 cd /root
 ifup enp0s3
-systemctl restart httpd
+systemctl reload httpd
 echo "Update completed successfully!"
