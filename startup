@@ -9,6 +9,9 @@ ifdown enp0s3
 cd /root
 tar -czf /root/backup/scripts_backup.tgz -C /root install update fix restore startup servicecheck cp
 
+# Globally allow storing of Git Credentials
+git config --global credential.helper store
+
 #Pull latest files and configuration from GitHub
 git fetch --all
 git reset --hard origin/master
