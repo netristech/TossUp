@@ -91,16 +91,17 @@ $(document).ready(function() {
                 if (!confirm('Make sure you have an Internet connection before proceeding!')) {
                         return;
                 } else {
+                        $('#output').html('<pre>Performing update of source code for GitHub</pre><pre>Please wait, this will take a moment. . .</pre>');
                         $.ajax({
                                 url: 'functions.php',
                                 type: 'post',
                                 data: 'action=update',
                                 success: function(result) {
-                                        $('#output').html(result);
+                                        $('#output').html($('#output').html() + result);
                                 }
                         });
                 }
-        });
+        });        
         $('#list').click(function(e) {
                 e.preventDefault();
                 $.ajax({
