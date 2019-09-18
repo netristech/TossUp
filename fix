@@ -2,7 +2,7 @@
 # Reset network interfaces
 
 echo "|----------------------------------------------|"
-echo "| Restarting services... This may take |"
+echo "| Restarting services... This may take         |"
 echo "| a few minutes. Please be patient...          |"
 echo "|----------------------------------------------|"
 echo " "
