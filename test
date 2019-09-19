@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ifdown enp0s3
+cd /var/www/html
+git config --global credential.helper store
+git fetch --all
+git reset --hard origin/master
+cd /root
+ifup enp0s3
+systemctl reload httpd
