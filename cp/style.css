@@ -18,7 +18,9 @@ body {
 
 button {
         padding: 10px 20px;
-        background-color: #ccc;
+        background-color: #1C48AC;
+        border-radius: 4px;
+        color: #fff;
 }
 
 #output {
