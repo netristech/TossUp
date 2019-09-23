@@ -8,7 +8,7 @@ if(isset($_POST['action']) && !empty($_POST['action'])) {
                         break;
                 case 'init':
                         initFunc();
-                        break;                        
+                        break;
                 case 'shutdown':
                         shutdownVM();
                         break;
@@ -20,7 +20,7 @@ if(isset($_POST['action']) && !empty($_POST['action'])) {
                         break;
                 case 'enable-wifi':
                         enableWifi();
-                        break;                        
+                        break;
                 case 'fix':
                         autoFix();
                         break;
@@ -29,7 +29,7 @@ if(isset($_POST['action']) && !empty($_POST['action'])) {
                         break;
                 case 'list-backups':
                         listBackups();
-                        break;                        
+                        break;
                 case 'restore':
                         restoreBackup();
                         break;
@@ -72,8 +72,12 @@ function autoFix() {
 }
 
 function updateCode() {
-        $output = shell_exec("sudo ./update.sh");
-        echo "<pre>" . $output . "</pre>";
+        if(isset($_POST['username']) && isset($_POST['password'])) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $output = shell_exec("sudo ./update.sh $username $password");
+                echo "<pre>" . $output . "</pre>";
+        }
 }
 
 function listBackups() {
