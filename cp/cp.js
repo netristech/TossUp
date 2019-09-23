@@ -73,7 +73,7 @@ $(document).ready(function() {
                                 $('#output').html($('#output').html() + '<pre>The interface has been enabled successfully.</pre>');
                         }
                 });
-        });        
+        });
         $('#fix').click(function(e) {
                 e.preventDefault();
                 $('#output').html('<pre>Performing automatic diagnostics.</pre><pre>This will take a moment. . .</pre>');
@@ -88,20 +88,29 @@ $(document).ready(function() {
         });
         $('#update').click(function(e) {
                 e.preventDefault();
-                if (!confirm('Make sure you have an Internet connection before proceeding!')) {
-                        return;
-                } else {
-                        $('#output').html('<pre>Performing update of source code for GitHub</pre><pre>Please wait, this will take a moment. . .</pre>');
-                        $.ajax({
-                                url: 'functions.php',
-                                type: 'post',
-                                data: 'action=update',
-                                success: function(result) {
-                                        $('#output').html($('#output').html() + result);
-                                }
-                        });
-                }
-        });        
+                $('#output').html('<pre>Make sure you have an active internet connection before proceeding</pre>');
+                $('#modal').fadeIn();
+        });
+        $('#modal button').click(function(e) {
+                e.preventDefault();
+                $('#output').html($('#output').html() + '<pre>Update canceled.</pre>');
+                $('#modal').hide();
+        });
+        $('#modal .submit').click(function(e) {
+                e.preventDefault();
+                var username = $('#username').val();
+                var password = $('#password').val();
+                $('#modal').fadeOut();
+                $('#output').html($('#output').html() + '<pre>Please wait, this could take a couple minutes. . .</pre>');
+                $.ajax({
+                        url: 'functions.php',
+                        type: 'post',
+                        data: 'action=update&username='+username+'&password='+password,
+                        success: function(result) {
+                                $('#output').html($('#output').html() + result);
+                        }
+                })
+        });
         $('#list').click(function(e) {
                 e.preventDefault();
                 $.ajax({
@@ -128,8 +137,8 @@ $(document).ready(function() {
                         });
                 }
                 else {
-                        $('#output').html($('#output').html() + '<pre>Operation cancelled.</pre>');
+                        $('#output').html('<pre>Operation cancelled.</pre>');
                         return;
                 }
-        });        
+        });
 });
