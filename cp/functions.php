@@ -72,12 +72,10 @@ function autoFix() {
 }
 
 function updateCode() {
-        if(isset($_POST['username']) && isset($_POST['password'])) {
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-                $output = shell_exec("sudo ./update.sh $username $password");
-                echo "<pre>" . $output . "</pre>";
-        }
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $output = shell_exec("sudo ./update.sh $username $password");
+        echo "<pre>" . $output . "</pre>";
 }
 
 function listBackups() {
