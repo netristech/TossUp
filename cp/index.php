@@ -9,14 +9,21 @@
         <script src="cp.js" type="text/javascript"></script>
 </head>
 <body>
+        <div id="modal" hidden>
+                <form>
+                        <label>GitHub Username</label><input id="username" type="text" name="username" />
+                        <label>Github Password</label><input id="password" type="password" name="password" />
+                        <span><input class="submit" type="submit" value="Submit"><button id="cancel">Cancel</button></span>
+                </form>
+        </div>
         <div id="top">
                 <button id="test" hidden>Test</button>
                 <button id="restart">Restart VM</button>
                 <button id="shutdown">Shutdown VM</button>
-                <button id="disable-wifi">Disable WiFi</button>
-                <button id="enable-wifi">Enable WiFi</button>
-                <button id="fix">Auto Fix</button>
+                <button id="disable-wifi" hidden>Disable WiFi</button>
+                <button id="enable-wifi" hidden>Enable WiFi</button>
                 <button id="update">Update Code</button>
+                <button id="fix">Auto Fix</button>
                 <button id="list">List Backups</button>
                 <button id="restore">Restore From Backup</button>
         </div>
