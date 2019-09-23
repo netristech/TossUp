@@ -76,7 +76,7 @@ $(document).ready(function() {
         });
         $('#fix').click(function(e) {
                 e.preventDefault();
-                $('#output').html('<pre>Performing automatic diagnostics.</pre><pre>This will take a moment. . .</pre>');
+                $('#output').html('<pre>Performing automatic diagnostics.</pre><pre>Please be patient, this will take a moment. . .</pre>');
                 $.ajax({
                         url: 'functions.php',
                         type: 'post',
