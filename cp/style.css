@@ -16,11 +16,20 @@ body {
         height: calc(20vh - 30px);
 }
 
-button {
+button,
+input[type="submit"] {
         padding: 10px 20px;
         background-color: #1C48AC;
         border-radius: 4px;
+        border: 2px solid #1C48AC;
         color: #fff;
+        margin-bottom: 16px;
+}
+
+button:hover,
+input[type = "submit"]:hover {
+        background-color: transparent;
+        color: #1C48AC;
 }
 
 #output {
@@ -31,4 +40,36 @@ button {
         background-color: #fff;
         color: #303132;
         border: 1px solid #ccc;
+}
+#modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 4px 8px 16px #ccc;
+        padding: 32px 32px 16px 32px;
+        min-width: 200px;
+        //width: 400px;
+        //height: 200px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        text-align: center;
+}
+#modal input:not([type="submit"]),
+#modal label {
+        display: block;
+        margin: auto;
+        width: 100%;
+}
+#modal input:not([type = "submit"]) {
+        margin-bottom: 16px;
+        padding: 8px 2px;
+}
+#modal input[type="submit"] {
+        margin-right: 8px;
+}
+#modal span {
+        width: auto;
+        display: inline-block;
+        margin: auto;
 }
