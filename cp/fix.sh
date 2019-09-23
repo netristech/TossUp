@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ifdown enp0s8
 #ifdown enp0s3
 command cp /root/ifcfg-enp0s3 /etc/sysconfig/network-scripts/
