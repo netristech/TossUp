@@ -1,15 +1,12 @@
-echo "Restarting services... This may take a few minutes. Please be patient. . . "
-/etc/init.d/network restart
-ifdown enp0s3
+#!/bin/bash
 ifdown enp0s8
-rm -f /etc/sysconfig/network-scripts/ifcfg-enp0s3
-cp /root/ifcfg-enp0s3 /etc/sysconfig/network-scripts/
+#ifdown enp0s3
+command cp /root/ifcfg-enp0s3 /etc/sysconfig/network-scripts/
 chmod 500 /etc/sysconfig/network-scripts/ifcfg-enp0s3
-ifup enp0s3
+#ifup enp0s3
 ifup enp0s8
-systemctl stop httpd
-systemctl start httpd
+systemctl reload httpd
 ip addr show | grep "enp0s3"
 ip addr show | grep "enp0s8"
 echo " "
-echo "Repairs complete!"
+echo "Repairs complete! If problems persist, use the 'Restart VM' button."
