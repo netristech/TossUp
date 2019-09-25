@@ -3,7 +3,7 @@ PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"
 # Startup Script for TossUp VMs
 
 #Shutdown Ethener adapter during provisioning operations
-ifdown enp0s3
+#ifdown enp0s3
 
 #Backup existing configuration
 cd /root
@@ -36,4 +36,4 @@ if [ $(cat /etc/sudoers | grep -c "%wheel  ALL = NOPASSWD:") -eq 0 ]; then
 fi
 
 #Bring Ethenet adapter back up
-ifup enp0s3
+#ifup enp0s3
