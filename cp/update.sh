@@ -16,6 +16,7 @@ git reset --hard origin/master
 #Update control panel
 cd /root/ && git pull origin/master
 command cp -r /root/cp/* /var/www/html/cp/
+chmod 550 /var/www/html/cp/*.sh
 
 chown -R apache:apache /var/www/html
 systemctl reload httpd
