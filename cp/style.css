@@ -13,7 +13,7 @@ body {
 }
 
 #top {
-        height: calc(20vh - 30px);
+        height: calc(12vh - 30px);
 }
 
 button,
@@ -35,7 +35,7 @@ input[type = "submit"]:hover {
 #output {
         box-sizing: border-box;
         width: 100%;
-        height: calc(80vh - 30px);
+        height: calc(88vh - 30px);
         padding: 16px;
         background-color: #fff;
         color: #303132;
