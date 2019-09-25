@@ -17,10 +17,9 @@ git fetch --all
 git reset --hard origin/master
 
 #Move files and change permissions
-chmod 550 install update fix restore startup
-chmod 555 servicecheck
+chmod 550 /root/*.sh
 cp -r /root/cp /var/www/html/
-chown -R apache:apache /var/www/html/cp
+chown -R apache:apache /var/www/html
 chmod 550 /var/www/html/cp/*.sh
 cp /root/crontab /var/spool/cron/root
 chmod 500 /var/spool/cron/root
