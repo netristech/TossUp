@@ -7,7 +7,7 @@ PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"
 
 #Backup existing configuration
 cd /root
-tar -czf /root/backup/scripts_backup.tgz -C /root install update fix restore startup servicecheck cp
+tar -czf /root/backup/scripts_backup.tgz -C /root *.sh
 
 # Globally allow storing of Git Credentials
 git config --global credential.helper store
