@@ -141,4 +141,9 @@ $(document).ready(function() {
                         return;
                 }
         });
+        $('#launch').click(function(e) {
+                e.preventDefault();
+                var win = window.open("http://192.168.255.254", "_blank");
+                win.focus();
+        });        
 });
