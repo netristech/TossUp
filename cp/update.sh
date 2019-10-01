@@ -14,7 +14,7 @@ git fetch --all
 git reset --hard origin/master
 
 #Update control panel
-cd /root/ && git pull origin/master
+cd /root/ && git pull origin master
 command cp -r /root/cp/* /var/www/html/cp/
 chmod 550 /var/www/html/cp/*.sh
 
