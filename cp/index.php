@@ -26,6 +26,7 @@
                 <button id="fix">Auto Fix</button>
                 <button id="list">List Backups</button>
                 <button id="restore">Restore From Backup</button>
+                <button id="launch">Launch Game UI</button>
         </div>
         <div id="output"></div>
 </body>
