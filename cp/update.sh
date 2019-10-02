@@ -4,7 +4,7 @@
 #Update TossUp Application
 echo "--------Updating TossUp App--------"
 git config --global credential.helper store
-if [ ! -z "$username"] && [ ! -z "$password"]; then
+if [ ! -z "$1"] && [ ! -z "$2"]; then
   username=$1
   password=$2
   echo "https://$username:$password@github.com" > /root/.git-credentials
