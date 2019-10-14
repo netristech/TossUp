@@ -34,7 +34,7 @@ if [ $(cat /etc/sudoers | grep -c "%wheel  ALL = NOPASSWD:") -eq 0 ]; then
   sed -i '/# %wheel/a %wheel  ALL = NOPASSWD: /var/www/html/cp/*.sh' /etc/sudoers
 fi
 if [ $(cat /etc/default/grub | grep -c 'GRUB_CMDLINE_LINUX="ipv6.disable=1') -eq 0 ]; then
-  sed -i 's/\<GRUB_CMDLINE_LINUX="\>/&ipv6.disable=1 /' /etc/default/grub
+  sed -i 's/GRUB_CMDLINE_LINUX="/GRUB_CMDLINE_LINUX="ipv6.disable=1 /g' /etc/default/grub
   grub2-mkconfig -o /boot/grub2/grub.cfg
 fi
 
