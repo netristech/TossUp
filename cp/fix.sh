@@ -3,7 +3,7 @@
 #ifdown enp0s8
 #ifdown enp0s3
 if [ $(cat /etc/default/grub | grep -c 'GRUB_CMDLINE_LINUX="ipv6.disable=1') -eq 0 ]; then
-  sed -i 's/\<GRUB_CMDLINE_LINUX="\>/&ipv6.disable=1 /' /etc/default/grub
+  sed -i 's/GRUB_CMDLINE_LINUX="/GRUB_CMDLINE_LINUX="ipv6.disable=1 /g' /etc/default/grub
   grub2-mkconfig -o /boot/grub2/grub.cfg
   echo "Repairs have been made that require reboot. Please use the 'Restart VM' button after completion"
 fi
